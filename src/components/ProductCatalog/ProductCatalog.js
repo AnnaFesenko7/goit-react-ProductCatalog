@@ -13,8 +13,6 @@ import {
 } from './ProductCatalog.styled';
 import { getLimitProducts } from '../../services/productCatalog-api';
 
-const LIMIT = 9;
-
 export default class ProductCatalog extends Component {
   state = {
     products: [],
@@ -58,7 +56,7 @@ export default class ProductCatalog extends Component {
       isLoading: true,
     });
 
-    this.fetchProducts(index * LIMIT);
+    this.fetchProducts(index * this.props.limit);
   };
 
   render() {
